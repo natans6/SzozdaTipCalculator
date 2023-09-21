@@ -12,12 +12,20 @@ public class main {
 
         System.out.print("Enter a cost in dollars and cents for every food item (-1 to end): ");
         double cost = scan.nextDouble();
+        cost = (int) (cost * 100);
+        int totalCost = 0;
 
         while (cost != -1) {
             System.out.print("Enter a cost in dollars and cents for every food item (-1 to end): ");
             cost = scan.nextDouble();
+            cost = (int) (cost * 100);
+            if (cost == -100.0){
+                cost = -1;
+            }
+            totalCost += cost;
+            System.out.println(totalCost);
         }
         System.out.println("-------------------------------------------------------------------------");
-        //System.out.println("Total bill before tip: " + )
+        System.out.println("Total bill before tip: " + ((totalCost) / 100));
     }
 }
