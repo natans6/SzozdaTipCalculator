@@ -27,17 +27,22 @@ public class main {
 
         }
 
+        // finding total cost
         double totalNewCost = ((totalCost + cost) + 1);
-        DecimalFormat f = new DecimalFormat("##.00");
+        DecimalFormat f = new DecimalFormat("##.00"); // decimal format
 
         // calculate tip
         double percentDecimal = (double) percent / 100;
         double tip = totalNewCost * percentDecimal;
-        DecimalFormat x = new DecimalFormat("##.00");
+        DecimalFormat x = new DecimalFormat("##.00"); // decimal format
+
+        double totalBill = totalNewCost + tip;
+        DecimalFormat y = new DecimalFormat("##.00");
 
         System.out.println("---------------------------------------------------------");
         System.out.println("Total bill before tip: $" + f.format(totalNewCost));
         System.out.println("Total percentage: " + percent + "%");
         System.out.println("Total tip: $" + x.format(tip));
+        System.out.println("Total bill with tip: $" + y.format(totalBill));
     }
 }
