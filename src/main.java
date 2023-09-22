@@ -24,10 +24,9 @@ public class main {
             System.out.print("Enter a cost in dollars and cents for every food item (-1 to end): ");
             tempCost = scan.nextDouble();
             totalCost += tempCost;
-
         }
 
-        // finding total cost
+        // finding total cost without tip
         double totalNewCost = ((totalCost + cost) + 1);
         DecimalFormat f = new DecimalFormat("##.00"); // decimal format
 
@@ -36,13 +35,21 @@ public class main {
         double tip = totalNewCost * percentDecimal;
         DecimalFormat x = new DecimalFormat("##.00"); // decimal format
 
+        // calculate total bill with tip
         double totalBill = totalNewCost + tip;
         DecimalFormat y = new DecimalFormat("##.00");
 
-        System.out.println("---------------------------------------------------------");
+        // calculate per person cost before tip
+        double personWithoutTip = totalNewCost / group;
+        DecimalFormat z = new DecimalFormat("##.00");
+
+        System.out.println("<-------------------------------------------------------------------->");
         System.out.println("Total bill before tip: $" + f.format(totalNewCost));
         System.out.println("Total percentage: " + percent + "%");
         System.out.println("Total tip: $" + x.format(tip));
         System.out.println("Total bill with tip: $" + y.format(totalBill));
+        System.out.println("Per person cost before tip: $" + z.format(personWithoutTip));
+        //System.out.println("Tip per person: $" + );
+        //System.out.println("Total cost per person: $");
     }
 }
