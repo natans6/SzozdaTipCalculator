@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.text.DecimalFormat;
 public class main {
     public static void main (String[] args){
         System.out.println("Welcome to the helpful tip calculator! ");
@@ -7,25 +7,28 @@ public class main {
 
         System.out.print("How many people are here with you today? ");
         int group = scan.nextInt();
+        scan.nextLine();
         System.out.print("What's the tip percentage (exclude the percent sign)? ");
         int percent = scan.nextInt();
+        scan.nextLine();
 
         System.out.print("Enter a cost in dollars and cents for every food item (-1 to end): ");
         double cost = scan.nextDouble();
-        cost = (int) (cost * 100);
-        int totalCost = 0;
+        double tempCost = cost;
+        scan.nextLine();
 
-        while (cost != -1) {
+        double totalCost = 0;
+
+        while (tempCost != -1) {
             System.out.print("Enter a cost in dollars and cents for every food item (-1 to end): ");
-            cost = scan.nextDouble();
-            cost = (int) (cost * 100);
-            if (cost == -100.0){
-                cost = -1;
-            }
-            totalCost += cost;
-            System.out.println(totalCost);
+            tempCost = scan.nextDouble();
+            totalCost += tempCost;
+
         }
-        System.out.println("-------------------------------------------------------------------------");
-        System.out.println("Total bill before tip: " + ((totalCost) / 100));
+        double totalNewCost = ((totalCost + cost) + 1);
+        DecimalFormat f = new DecimalFormat("##.00");
+        System.out.println("Total bill before tip: " + f.format(totalNewCost));
+
+
     }
 }
