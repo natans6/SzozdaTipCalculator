@@ -19,16 +19,25 @@ public class main {
 
         double totalCost = 0;
 
+        // to find total price of items
         while (tempCost != -1) {
             System.out.print("Enter a cost in dollars and cents for every food item (-1 to end): ");
             tempCost = scan.nextDouble();
             totalCost += tempCost;
 
         }
+
         double totalNewCost = ((totalCost + cost) + 1);
         DecimalFormat f = new DecimalFormat("##.00");
-        System.out.println("Total bill before tip: " + f.format(totalNewCost));
 
+        // calculate tip
+        double percentDecimal = (double) percent / 100;
+        double tip = totalNewCost * percentDecimal;
+        DecimalFormat x = new DecimalFormat("##.00");
 
+        System.out.println("---------------------------------------------------------");
+        System.out.println("Total bill before tip: $" + f.format(totalNewCost));
+        System.out.println("Total percentage: " + percent + "%");
+        System.out.println("Total tip: $" + x.format(tip));
     }
 }
