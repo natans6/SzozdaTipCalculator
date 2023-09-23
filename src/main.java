@@ -26,8 +26,9 @@ public class main {
         String item1 = scan.nextLine();
 
         double totalCost = 0;
-        ArrayList itemsList = new ArrayList();
 
+        // I learned how to make array lists from here: https://www.youtube.com/watch?v=pTAda7qU4LY
+        ArrayList itemsList = new ArrayList();
         itemsList.add(item1);
 
         // to find total price of items
@@ -90,6 +91,7 @@ public class main {
         }
 
         System.out.println("<-------------------------------------------------------------------->");
+        // I  learned how to print the elements on seperate lines from here: https://stackoverflow.com/questions/12887857/display-each-list-element-in-a-separate-line-console
         System.out.println("Items ordered: ");
         itemsList.forEach(System.out::println);
     }
