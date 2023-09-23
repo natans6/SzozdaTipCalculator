@@ -43,13 +43,17 @@ public class main {
         double personWithoutTip = totalNewCost / group;
         DecimalFormat z = new DecimalFormat("##.00");
 
+        // calculate tip per person
+        double tipPerPerson = tip / group;
+        DecimalFormat t = new DecimalFormat("##.00");
+
         System.out.println("<-------------------------------------------------------------------->");
         System.out.println("Total bill before tip: $" + f.format(totalNewCost));
         System.out.println("Total percentage: " + percent + "%");
         System.out.println("Total tip: $" + x.format(tip));
         System.out.println("Total bill with tip: $" + y.format(totalBill));
         System.out.println("Per person cost before tip: $" + z.format(personWithoutTip));
-        //System.out.println("Tip per person: $" + );
+        System.out.println("Tip per person: $" + t.format(tipPerPerson));
         //System.out.println("Total cost per person: $");
     }
 }
