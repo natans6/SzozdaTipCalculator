@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
+import java.util.List;
+import java.util.ArrayList;
 public class main {
     public static void main (String[] args){
         System.out.println("Welcome to the helpful tip calculator! ");
@@ -20,13 +22,25 @@ public class main {
         double tempCost = cost;
         scan.nextLine();
 
+        System.out.print("Enter the item: ");
+        String item1 = scan.nextLine();
+
         double totalCost = 0;
+        ArrayList itemsList = new ArrayList();
+
+        itemsList.add(item1);
 
         // to find total price of items
         while (tempCost != -1) {
             System.out.print("Enter a cost in dollars and cents for every food item (-1 to end): ");
             tempCost = scan.nextDouble();
             totalCost += tempCost;
+            scan.nextLine();
+            if (tempCost != -1) {
+                System.out.print("Enter the item: ");
+                String item = scan.nextLine();
+                itemsList.add(item);
+            }
         }
 
         //  I learned how to round to the nearest hundredth using DecimalFormatter through https://www.baeldung.com/java-round-decimal-number
@@ -74,5 +88,9 @@ public class main {
             System.out.println("Total gratuity for groups of 6 or more: $" + k.format(gratuity));
             System.out.println("Total cost with tip and gratuity: $" + h.format(newTotalForSixOrMore));
         }
+
+        System.out.println("<-------------------------------------------------------------------->");
+        System.out.println("Items ordered: ");
+        itemsList.forEach(System.out::println);
     }
 }
