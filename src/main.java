@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
-import java.util.List;
 import java.util.ArrayList;
 public class main {
     public static void main (String[] args){
@@ -71,6 +70,7 @@ public class main {
         double totalPerson = totalBill / group;
         DecimalFormat w = new DecimalFormat("##.00");
 
+        // prints out the necessary values
         System.out.println("<-------------------------------------------------------------------->");
         System.out.println("Total bill before tip: $" + f.format(totalNewCost));
         System.out.println("Total percentage: " + percent + "%");
@@ -91,7 +91,7 @@ public class main {
         }
 
         System.out.println("<-------------------------------------------------------------------->");
-        // I  learned how to print the elements on seperate lines from here: https://stackoverflow.com/questions/12887857/display-each-list-element-in-a-separate-line-console
+        // I  learned how to print the elements on separate lines from here: https://stackoverflow.com/questions/12887857/display-each-list-element-in-a-separate-line-console
         System.out.println("Items ordered: ");
         itemsList.forEach(System.out::println);
     }
