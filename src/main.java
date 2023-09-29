@@ -44,50 +44,43 @@ public class main {
         }
 
         //  I learned how to round to the nearest hundredth using DecimalFormatter through https://www.baeldung.com/java-round-decimal-number
+        DecimalFormat x = new DecimalFormat("##.00");
 
         // finding total cost without tip
         double totalNewCost = ((totalCost + cost) + 1);
-        DecimalFormat f = new DecimalFormat("##.00"); // decimal format
 
         // calculate tip
         double percentDecimal = (double) percent / 100;
         double tip = totalNewCost * percentDecimal;
-        DecimalFormat x = new DecimalFormat("##.00"); // decimal format
 
         // calculate total bill with tip
         double totalBill = totalNewCost + tip;
-        DecimalFormat y = new DecimalFormat("##.00");
 
         // calculate per person cost before tip
         double personWithoutTip = totalNewCost / group;
-        DecimalFormat z = new DecimalFormat("##.00");
 
         // calculate tip per person
         double tipPerPerson = tip / group;
-        DecimalFormat t = new DecimalFormat("##.00");
 
         // calculate total cost per person
         double totalPerson = totalBill / group;
-        DecimalFormat w = new DecimalFormat("##.00");
 
         // prints out the necessary values
         System.out.println("<-------------------------------------------------------------------->");
-        System.out.println("Total bill before tip: $" + f.format(totalNewCost));
+        System.out.println("Total bill before tip: $" + x.format(totalNewCost));
         System.out.println("Total percentage: " + percent + "%");
         System.out.println("Total tip: $" + x.format(tip));
-        System.out.println("Total bill with tip: $" + y.format(totalBill));
-        System.out.println("Per person cost before tip: $" + z.format(personWithoutTip));
-        System.out.println("Tip per person: $" + t.format(tipPerPerson));
-        System.out.println("Total cost per person: $" + w.format(totalPerson));
+        System.out.println("Total bill with tip: $" + x.format(totalBill));
+        System.out.println("Per person cost before tip: $" + x.format(personWithoutTip));
+        System.out.println("Tip per person: $" + x.format(tipPerPerson));
+        System.out.println("Total cost per person: $" + x.format(totalPerson));
 
         // calculating 18 percent of the check for those who have groups of 6 or more
         if (group >= 6) {
             double gratuity = totalNewCost * 0.18;
-            DecimalFormat k = new DecimalFormat("##.00");
             double newTotalForSixOrMore = totalBill + gratuity;
-            DecimalFormat h = new DecimalFormat("##.00");
-            System.out.println("Total gratuity for groups of 6 or more: $" + k.format(gratuity));
-            System.out.println("Total cost with tip and gratuity: $" + h.format(newTotalForSixOrMore));
+            System.out.println("Total gratuity for groups of 6 or more: $" + x.format(gratuity));
+            System.out.println("Total cost with tip and gratuity: $" + x.format(newTotalForSixOrMore));
         }
 
         System.out.println("<-------------------------------------------------------------------->");
